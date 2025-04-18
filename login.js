@@ -32,8 +32,16 @@ document.getElementById("button").addEventListener("click", async () => {
     const querySnapshot = await getDocs(q);
 
     if (!querySnapshot.empty) {
+      const userDoc = querySnapshot.docs[0].data(); // Get user data from the first matched document
+      const username = userDoc.username;
+      const role = userDoc.role;
+
+      // Store username and role in localStorage
+      localStorage.setItem("username", username);
+      localStorage.setItem("role", role);
+
       alert("Login successful!");
-      window.location.href = "index.html"; // 👈 Redirect after login
+      window.location.href = "index.html"; // Redirect after login
     } else {
       alert("Invalid email or password.");
     }
