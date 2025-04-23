@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="msg">
-        <p id="para">Hello, <span id="username"></span></p>
-        <p>Your role: <span id="role"></span></p>
+<body id="index-page" style="font-size: 18px; font-family: Arial, sans-serif; color: white;">
+
+  <!-- Navbar Section -->
+  <nav class="navbar" style="background-color: rgba(0, 0, 0, 0.8); padding: 1rem;">
+    <div class="navbar-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="#" class="navbar-brand" style="font-size: 1.5rem; color: white; text-decoration: none;">Home</a>
+      <div class="navbar-links">
+        <a href="#" class="navbar-link" style="font-size: 1rem; margin-left: 1rem; color: white; text-decoration: none;">Profile</a>
+        <a href="#" class="navbar-link" style="font-size: 1rem; margin-left: 1rem; color: white; text-decoration: none;">Settings</a>
+        <a href="#" id="logout" class="navbar-link" style="font-size: 1rem; margin-left: 1rem; color: white; text-decoration: none;">Logout</a>
+      </div>
     </div>
-    <button id="logoutbtn">Logout</button>
-    <script>
-        // Retrieve user data from localStorage
-        const username = localStorage.getItem("username");
-        const role = localStorage.getItem("role");
+  </nav>
 
-        // If user data exists, display it
-        if (username && role) {
-            document.getElementById("username").textContent = username;
-            document.getElementById("role").textContent = role;
-        } else {
-            alert("Please log in first.");
-            window.location.href = "login.html"; // Redirect to login if no user data found
-        }
+  <!-- Main Content Section -->
+  <div id="msg" style="padding: 2rem; text-align: center;">
+    <p id="para" style="font-size: 1.5rem;">Hello: <span id="username" style="color: red;"></span></p>
+    <p style="font-size: 1.5rem;">Your role: <span id="role" style="color: red;"></span></p>
+  </div>
 
-        // Handle logout
-        document.getElementById("logoutbtn").addEventListener("click", () => {
-            // Clear any saved user data
-            localStorage.clear();
+  <script>
+    // Retrieve user data from localStorage
+    const username = localStorage.getItem("username");
+    const role = localStorage.getItem("role");
 
-            // Redirect to login page
-            window.location.href = "login.html"; 
-        });
-    </script>
+    // If user data exists, display it
+    if (username && role) {
+      document.getElementById("username").textContent = username;
+      document.getElementById("role").textContent = role;
+    } else {
+      alert("Please log in first.");
+      window.location.href = "login.html"; // Redirect to login if no user data found
+    }
+
+    // Handle logout in navbar
+    document.getElementById("logout").addEventListener("click", () => {
+      localStorage.clear(); // Clear saved user data
+      window.location.href = "login.html"; // Redirect to login
+    });
+  </script>
 </body>
 </html>

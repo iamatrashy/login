@@ -1,94 +1,32 @@
-*{
+*,
+body,
+input,
+button,
+a {
     margin: 0;
     padding: 0;
-}
-
-body{
-    margin-top: 200px;
-    text-align: center;
-    flex: none;
-    background:pink;
-}
-
-.tittle{
     font-family: 'Courier New', Courier, monospace;
-    font: size 50px;
-    font-weight: 100;
-    color: #5f008b;
+    transition: all 0.3s ease;
 }
 
-#usrnam,#pass{
-    font-family: 'Courier New', Courier, monospace;
-    font-family: 20px;
-    font-weight: 100;
-    padding: 0 10px 10px 0;
-    color: blueviolet;
-    gap: 10px;
-    border:none;
-    cursor: pointer;
+body {
+    min-height: 100vh;
     text-align: center;
-}
-#button {
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    cursor: pointer;
-    color: blueviolet;
-    background-color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease; /* Smooth animation */
-}
-
-#button:hover {
-    background-color: blueviolet;
-    color: white;
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional shadow */
-}
-
-.input-container {
+    background: url('bg.png') center/cover no-repeat;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 10px;
-    margin: 10px auto;
-    width: 300px; /* Adjust width as needed */
-    background-color: #fff;
-    padding: 8px 12px;
-    border-radius: 8px;
+    align-items: center;
 }
 
-.input-container svg {
-    flex-shrink: 0;
-}
-
-.input-container input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    color: blueviolet;
-}
-
-#username,#email, #password, #role{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+.tittle {
+    font-size: 50px;
     font-weight: 100;
-    padding: 0 10px 10px 0;
-    color: blueviolet;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}/* Applies to all username-like input fields */
-#username,
-#usrnam,
-#email,
-#password,
-#pass,
-#role {
-    font-family: 'Courier New', Courier, monospace;
+    color: yellow;
+}
+
+#usrnam, #pass,
+#username, #email, #password, #role {
     font-size: 20px;
     font-weight: 100;
     padding: 0 10px 10px 0;
@@ -98,26 +36,18 @@ body{
     text-align: center;
     position: relative;
     z-index: 1;
-    transition: border 0.3s ease;
     border: 2px solid transparent;
     border-radius: 8px;
+    transition: border 0.3s ease;
 }
 
-#username:hover,
-#usrnam:hover,
-#email:hover,
-#password:hover,
-#pass:hover,
-#role:hover {
-    border: 2px solid blueviolet;
+#usrnam:hover, #pass:hover,
+#username:hover, #email:hover, #password:hover, #role:hover {
+    border-color: blueviolet;
 }
 
-#username::before,
-#usrnam::before,
-#email::before,
-#password::before,
-#pass::before,
-#role::before {
+#usrnam::before, #pass::before,
+#username::before, #email::before, #password::before, #role::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -132,61 +62,48 @@ body{
     transition: all 0.4s ease;
 }
 
-#username:hover::before,
-#usrnam:hover::before,
-#email:hover::before,
-#password:hover::before,
-#pass:hover::before,
-#role:hover::before {
+#usrnam:hover::before, #pass:hover::before,
+#username:hover::before, #email:hover::before, #password:hover::before, #role:hover::before {
     transform: scale(1);
     opacity: 1;
     animation: spin-border 1s linear infinite;
 }
 
-#username:focus,
-#usrnam:focus,
-#email:focus,
-#password:focus,
-#pass:focus,
-#role:focus {
-    border: 2px solid blueviolet;
+#usrnam:focus, #pass:focus,
+#username:focus, #email:focus, #password:focus, #role:focus {
+    border-color: blueviolet;
     outline: none;
-    border-radius: 8px;
     box-shadow: 0 0 5px blueviolet;
-    transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
-
-#signupbtn {
+#button, #signupbtn {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
+    color: blueviolet;
     background-color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
-    transition: all 0.3s ease; /* Smooth animation */
 }
 
-#signupbtn:hover {
+#button:hover, #signupbtn:hover{
     background-color: blueviolet;
     color: white;
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 a {
-    color: blueviolet;
+    color: orange;
     text-decoration: none;
     position: relative;
-    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #9f5dcf;
+    color:yellow;
 }
 
-/* Optional: underline that slides in */
 a::after {
     content: "";
     position: absolute;
@@ -194,7 +111,7 @@ a::after {
     height: 2px;
     left: 0;
     bottom: -2px;
-    background-color: #9f5dcf;
+    background-color: orange;
     transition: width 0.3s ease;
 }
 
@@ -202,58 +119,156 @@ a:hover::after {
     width: 100%;
 }
 
-.form-container {
+.form-container,
+#msg {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
     gap: 20px;
+}
+
+.input-container,
+.input-container2 {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.input-container {
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px auto;
+    width: 300px;
+    padding: 8px 12px;
+}
+
+.input-container svg {
+    flex-shrink: 0;
+}
+
+.input-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: blueviolet;
 }
 
 .input-container2 {
-    display: flex;
     flex-direction: column;
     gap: 15px;
     width: 300px;
-    background-color: #fff;
     padding: 16px;
-    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-#logoutbtn{
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    cursor: pointer;
-    color: blueviolet;
-    background-color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+#logoutbtn {
     margin-top: 20px;
-    transition: all 0.3s ease; /* Smooth animation */
 }
 
-#para{
-    font-family: 'Courier New', Courier, monospace;
-    color: #5f008b;
-    font-weight: 300;
-    font-size: large;
+@media (max-width: 600px) {
+    .form-container {
+        max-width: 90%;
+        margin-top: 60px;
+    }
+    .input-container2 {
+        padding: 12px;
+    }
+    .input-container input,
+    #signupbtn {
+        font-size: 16px;
+    }
+    .tittle {
+        font-size: 32px;
+    }
 }
 
-#logoutbtn:hover {
-    background-color: blueviolet;
-    color: white;
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Optional shadow */
+@media (min-width: 1600px) {
+    .form-container {
+        max-width: 600px;
+    }
+    .input-container2 {
+        padding: 24px;
+    }
+    .input-container input {
+        font-size: 22px;
+    }
+    #signupbtn {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+    .tittle {
+        font-size: 60px;
+    }
 }
 
-#msg{
+#index-page #button:hover,
+#index-page #signupbtn:hover,
+#index-page #usrnam:hover,
+#index-page #pass:hover,
+#index-page #username:hover,
+#index-page #email:hover,
+#index-page #password:hover,
+#index-page #role:hover {
+    background-color: inherit;
+    color: inherit;
+    transform: none;
+    box-shadow: none;
+    border-color: inherit;
+}
+
+
+
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
     gap: 20px;
 }
 
+.navbar-link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-link:hover {
+    background-color: #555;
+}
+
+/* Add a margin to the top of the main content to avoid overlap with the fixed navbar */
+#msg {
+    margin-top: 80px;
+}
